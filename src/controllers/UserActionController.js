@@ -75,6 +75,7 @@ class UserController {
                 username: request.username,
             })
             .count('id as id')
+            console.log(result.id)
         if (result.id) {
             ctx.throw(400, 'DUPLICATE_USERNAME')
         }

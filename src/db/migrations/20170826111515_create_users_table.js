@@ -40,12 +40,11 @@ exports.up = function(knex, Promise) {
         table.string('ipAddress')
 
         table
-            .dateTime('updatedAt')
-            .defaultTo(knex.raw('NULL ON UPDATE CURRENT_TIMESTAMP'))
+            .timestamp('updatedAt')
         table
-            .dateTime('createdAt')
+            .timestamp('createdAt')
             .notNullable()
-            .defaultTo(knex.raw('CURRENT_TIMESTAMP'))
+            .defaultTo(knex.raw('now()'))
     })
 }
 
